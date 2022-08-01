@@ -30,3 +30,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# GPT-3 training data
+training_data.jsonl
