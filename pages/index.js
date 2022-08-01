@@ -14,7 +14,7 @@ export default function Home() {
           name="description"
           content="An easier way to write crontab schedules."
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
 
       <main className="grow flex flex-col justify-center items-center">
