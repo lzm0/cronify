@@ -66,6 +66,7 @@ export default function Home() {
           </a>
           <a
             className="transition hover:brightness-50"
+            aria-label="View on GitHub"
             href="https://github.com/lzm0/cronify"
             target="_blank"
             rel="noopener noreferrer"
