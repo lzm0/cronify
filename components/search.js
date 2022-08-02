@@ -37,7 +37,7 @@ export default function Search() {
       <form className="flex space-x-2 py-10" onSubmit={handleSubmit}>
         <input
           type="text"
-          className="grow placeholder:italic placeholder:text-slate-400 text-slate-800 text-lg block bg-white border border-slate-300 rounded-xl py-3 px-5 shadow-sm focus:outline-none focus:border-pink-500 focus:ring-pink-500 focus:ring-1"
+          className="grow placeholder:italic placeholder:text-slate-400 text-slate-800 text-lg block bg-white border border-slate-300 rounded-xl py-3 px-5 transition shadow-sm focus:outline-none focus:border-pink-500 focus:ring-pink-500 focus:ring-1"
           onChange={handleChange}
           placeholder={input}
         />
