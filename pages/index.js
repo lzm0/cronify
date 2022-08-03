@@ -18,7 +18,7 @@ export default function Home() {
       </Head>
 
       <main className="grow flex flex-col justify-center items-center">
-        <div className="flex flex-col items-center max-w-md sm:max-w-lg px-5">
+        <div className="flex flex-col items-center max-w-lg px-5">
           <div className="text-8xl font-sans text-center font-bold pb-10 bg-clip-text text-transparent bg-gradient-to-b from-pink-500 to-red-500">
             Cronify
           </div>

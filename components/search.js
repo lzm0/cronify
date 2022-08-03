@@ -34,20 +34,23 @@ export default function Search() {
 
   return (
     <div className="w-full">
-      <form className="flex space-x-2 py-10" onSubmit={handleSubmit}>
+      <form
+        className="flex justify-between space-x-2 my-10"
+        onSubmit={handleSubmit}
+      >
         <input
           type="text"
-          className="grow placeholder:italic placeholder:text-slate-400 text-slate-800 text-lg block bg-white border border-slate-300 rounded-xl py-3 px-5 transition shadow-sm focus:outline-none focus:border-pink-500 focus:ring-pink-500 focus:ring-1"
+          className="grow placeholder:italic placeholder:text-slate-400 text-slate-800 text-lg bg-white border border-slate-300 rounded-xl w-10 h-14 px-5 transition shadow-sm focus:outline-none focus:border-pink-500 focus:ring-pink-500 focus:ring-1"
           onChange={handleChange}
           placeholder={input}
         />
         <button
           type="submit"
-          className="flex justify-center items-center bg-gradient-to-b from-pink-500 to-red-500 text-pink-100 px-5 transition shadow-lg hover:shadow-xl shadow-pink-400/40 hover:shadow-pink-400/30 rounded-xl text-lg"
+          className="flex justify-center items-center bg-gradient-to-b from-pink-500 to-red-500 text-pink-100 h-14 min-w-14 px-5 transition shadow-lg hover:shadow-xl shadow-pink-400/40 hover:shadow-pink-400/30 rounded-xl text-lg"
         >
           {loading ? (
             <svg
-              className="animate-spin h-5 w-5 text-white"
+              className="animate-spin h-6 w-6 text-white"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
