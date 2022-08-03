@@ -3,7 +3,7 @@ import Output from "./output";
 
 export default function Search() {
   const [input, setInput] = useState("Everyday at 9 AM");
-  const [output, setOutput] = useState("0 0 * * *");
+  const [output, setOutput] = useState("* * * * *");
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
 

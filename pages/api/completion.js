@@ -10,7 +10,7 @@ function filterCompletion(completion) {
   if (splitted.length === 5) {
     return splitted.join(" ");
   } else {
-    return "0 0 * * *";
+    return "* * * * *";
   }
 }
 
