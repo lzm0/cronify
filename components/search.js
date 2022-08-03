@@ -41,19 +41,20 @@ export default function Search() {
         <div className="grow relative">
           <input
             type="text"
-            className="w-full placeholder:italic placeholder:text-slate-400 text-slate-800 text-lg bg-white border border-slate-300 rounded-xl h-14 pl-5 pr-12 transition shadow-sm focus:outline-none focus:border-pink-500 focus:ring-pink-500 focus:ring-1"
+            className="w-full placeholder:italic placeholder:text-slate-400 text-slate-800 text-lg bg-white border border-slate-300 rounded-xl h-14 pl-5 pr-14 transition shadow-sm focus:outline-none focus:border-pink-500 focus:ring-pink-500 focus:ring-1"
             onChange={handleChange}
             placeholder={input}
           />
           <a
             href="https://blog.zimo.li/introducing-cronify"
+            className="absolute inset-y-0 right-0 mr-4 flex items-center"
             title="Learn more"
             target="_blank"
             rel="noopener noreferrer"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="absolute inset-y-0 translate-y-1/2 right-0 mr-4 h-7 w-7 fill-slate-300"
+              className="h-6 w-6 fill-slate-300"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
