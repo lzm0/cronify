@@ -3,7 +3,7 @@ import Output from "./output";
 
 export default function Search() {
   const [input, setInput] = useState("Everyday at 9 AM");
-  const [output, setOutput] = useState();
+  const [output, setOutput] = useState("0 0 * * *");
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
 
@@ -75,6 +75,15 @@ export default function Search() {
         </button>
       </form>
       <Output output={output} error={error}></Output>
+      <div className="mt-3 text-center text-slate-500 transition hover:underline">
+        <a
+          href={"https://crontab.guru/#" + output.replaceAll(" ", "_")}
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+        >
+          Open in crontab.guru
+        </a>
+      </div>
     </div>
   );
 }
