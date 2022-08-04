@@ -25,7 +25,7 @@ export default function handler(req, res) {
     return openai
       .createCompletion({
         model: "code-davinci-002",
-        prompt: `# Create a UNIX cron expression that represents ${req.body.prompt}\ncron = "`,
+        prompt: `# Create a UNIX cron expression that represents ${req.body.prompt}. A cron expression should have five fields: minute, hour, day of month, month and day of week.\ncron = "`,
         max_tokens: 64,
         temperature: 0,
         stop: '"',
@@ -33,6 +33,10 @@ export default function handler(req, res) {
       .then((response) => {
         res.status(200).json({
           completion: filterCompletion(response.data.choices?.[0].text),
+        });
+        console.log({
+          request: req.body,
+          response: response.data.choices,
         });
       })
       .catch((e) => {
