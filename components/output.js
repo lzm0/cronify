@@ -1,7 +1,16 @@
+import { useState, useEffect } from "react";
+import { CheckIcon, CopyIcon } from "./icons";
+
 export default function Output({ output, error }) {
+  const [copied, setCopied] = useState(false);
+
   function copy(event) {
     event.preventDefault();
     navigator.clipboard.writeText(output);
+    setCopied(true);
+    setTimeout(() => {
+      setCopied(false);
+    }, 1000);
   }
 
   return (
@@ -11,15 +20,7 @@ export default function Output({ output, error }) {
     >
       {output}
       <span className="absolute inset-y-0 right-0 mr-4 flex items-center">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6 fill-slate-300"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-        >
-          <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" />
-          <path d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z" />
-        </svg>
+        {copied ? <CheckIcon /> : <CopyIcon />}
       </span>
     </div>
   );
