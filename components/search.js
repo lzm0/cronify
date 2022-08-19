@@ -45,6 +45,7 @@ export default function Search() {
             className="w-full placeholder:italic placeholder:text-slate-400 text-slate-800 text-lg bg-white border border-slate-300 rounded-xl h-14 pl-5 pr-14 transition shadow-sm focus:outline-none focus:border-pink-500 focus:ring-pink-500 focus:ring-1"
             onChange={handleChange}
             placeholder={input}
+            autoFocus
           />
           <a
             href="https://blog.zimo.li/introducing-cronify"
