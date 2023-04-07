@@ -23,21 +23,35 @@ export default function handler(req, res) {
     res.status(413).json({ error: "Prompt too long" });
   } else {
     return openai
-      .createCompletion({
-        model: "code-davinci-002",
-        prompt: `# Create a UNIX cron expression that represents ${req.body.prompt}. A cron expression should have five fields: minute, hour, day of month, month and day of week.\ncron = "`,
-        max_tokens: 64,
+      .createChatCompletion({
+        model: "gpt-3.5-turbo",
+        messages: [
+          {
+            role: "system",
+            content:
+              "You are a tool that generates cron expressions from user prompts. Do not respond anything other than a cron expression.",
+          },
+          {
+            role: "user",
+            content: req.body.prompt,
+          },
+        ],
+        max_tokens: 32,
         temperature: 0,
-        stop: '"',
+        stop: ["\n"],
       })
       .then((response) => {
         res.status(200).json({
-          completion: filterCompletion(response.data.choices?.[0].text),
+          completion: filterCompletion(
+            response.data.choices?.[0].message.content
+          ),
         });
-        console.log({
-          request: req.body,
-          response: response.data.choices,
-        });
+        console.log(
+          JSON.stringify({
+            request: req.body,
+            response: response.data,
+          })
+        );
       })
       .catch((e) => {
         console.log(e);
